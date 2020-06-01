@@ -1,0 +1,35 @@
+.image-modal {
+  width: 45vw;
+  position: fixed;
+  z-index: 200;
+  top: 1vh;
+  left: 28%;
+}
+
+.image-modal > img {
+  width: 100%;
+  position: absolute;
+  z-index: 201;
+}
+
+@media (max-width: 64rem) and (orientation: portrait) {
+  .image-modal {
+    top: 10vh;
+    left: 15vw;
+  }
+
+  .image-modal > img {
+    min-width: 70vw;
+  }
+}
+
+@media (max-width: 29.9rem) {
+  .image-modal {
+    top: 19vh;
+    left: 1%;
+  }
+
+  .image-modal > img {
+    min-width: 98vw;
+  }
+}

@@ -1,0 +1,20 @@
+.example {
+  width: 20%;
+  min-width: 16.7rem;
+  max-width: 25rem;
+  margin: auto;
+  padding: 1rem;
+  display: inline-block;
+}
+
+.example-image {
+  border-radius: 50%;
+  width: 100%;
+  border: 3px solid #ab4cb8;
+}
+
+.example-image:hover,
+.example-image:active {
+  opacity: 0.8;
+  cursor: pointer;
+}

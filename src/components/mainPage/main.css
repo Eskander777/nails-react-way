@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+#main-showcase {
+  background: url(../../assets/French-Manicure.jpg) top / cover no-repeat;
+  width: 100%;
+  height: 80vh;
+}
+
+.main-showcase__name {
+  position: absolute;
+  top: 10%;
+  left: 44%;
+}
+
+.main-showcase__name > h1 {
+  margin: 1.4rem 0;
+  font: 600 10.5vmax 'Kaushan Script', cursive;
+  color: #bb509b;
+  text-shadow: 6px 3px 2px #000000;
+}
+
+.main-showcase__name > h1:first-of-type {
+  position: relative;
+  right: 50%;
+}
+
+.main-info {
+  padding: 1rem;
+}
+
+.info-card {
+  border-radius: 2%;
+  background: #fcdeec;
+  border: 1px solid black;
+  box-shadow: 3px 3px 1px 3px rgba(0, 0, 0, 0.2);
+  text-align: justify;
+}
+
+.main-info h2 {
+  text-align: center;
+}
+
+.main-info p {
+  margin: 2.5rem;
+  font: 1rem sans-serif;
+  line-height: 1.5;
+}
+
+@media (max-width: 30rem) {
+  .main-showcase__name > h1 {
+    font-size: 10vmax;
+  }
+
+  .main-info p {
+    margin: 1rem;
+  }
+}

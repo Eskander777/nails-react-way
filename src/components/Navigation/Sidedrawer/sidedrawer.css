@@ -1,0 +1,31 @@
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  z-index: 200;
+  background-color: #f7cce0;
+}
+
+.mobile-nav__items {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0;
+  margin-left: 3%;
+}
+
+.mobile-nav__item {
+  margin: 1rem;
+}
+
+.mobile-nav__item > a {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.mobile-nav__item > a:hover,
+.mobile-nav__item > a:active {
+  text-decoration: underline #ff07ff;
+}

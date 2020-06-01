@@ -1,0 +1,80 @@
+.order-page__background {
+  height: 86vh;
+  background: url(../../assets/French-Manicure.jpg) top / cover no-repeat;
+}
+
+.order-form {
+  position: relative;
+  top: 1.5rem;
+  background-color: #f7cce0;
+  margin: auto;
+  width: 40%;
+  min-width: 20rem;
+  border: 1px solid black;
+  padding: 1rem;
+  box-shadow: 2px 2px 2px 2px rgba(1, 1, 1, 0.5);
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: [input-f-title-start] 7rem [input-f-title-end input-f-start] minmax(
+      7rem,
+      auto
+    ) [input-f-end];
+}
+
+.order-form input:invalid {
+  border-color: red;
+  background-color: lightcoral;
+}
+
+.order-form label {
+  font: bold 1rem sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.order-form input {
+  padding: 0.2rem;
+  border: 2px solid #a5a5a5;
+  font: inherit;
+}
+
+.order-form input:focus {
+  outline: none;
+  background-color: #ffddf8;
+  border-color: violet;
+}
+
+.order-form__button-container {
+  grid-column: 1 / span 2;
+  display: flex;
+  justify-content: center;
+}
+
+.order-form button {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  background-color: lightcoral;
+  border: none;
+  font: inherit;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+  flex-basis: 15rem;
+}
+
+.order-form button:hover,
+.order-form button:active {
+  background-color: #f7338ecc;
+  cursor: pointer;
+}
+
+.order-form button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 40rem) {
+  .order-form input {
+    grid-column: input-f-title-start / span 2;
+  }
+}

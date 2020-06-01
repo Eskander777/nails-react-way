@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: cursive;
+  background-color: #f7cce0;
+}
+
+div#root {
+  display: grid;
+  grid-template-rows: 3.45rem minmax(86.2vh, auto) fit-content(4rem);
+  grid-template-areas: "header" "main" "footer";
+}
