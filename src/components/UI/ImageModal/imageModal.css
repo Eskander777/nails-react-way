@@ -4,6 +4,14 @@
   z-index: 200;
   top: 1vh;
   left: 28%;
+  transform: translateY(-5rem);
+  opacity: 0;
+  transition: transform 200ms ease-out, opacity 200ms linear;
+}
+
+.open {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
 }
 
 .image-modal > img {
