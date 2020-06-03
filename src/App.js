@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import Aux from './hoc/auxilliary/Auxilliary';
 import Toolbar from './components/Navigation/Toolbar/Toolbar';
-import Footer from './components/Navigation/Footer/Footer'
+import Footer from './components/Navigation/Footer/Footer';
 import MainPage from './components/mainPage/Main';
 import ExamplesPage from './components/examplesPage/ExamplesPage';
 import OrderPage from './components/orderPage/OrderPage';
@@ -24,10 +24,6 @@ const App = () => {
     setSideDrawerState({ showSideDrawer: false });
   };
 
-  let sidedrawer = sideDrawerState.showSideDrawer ? (
-    <Sidedrawer close={closeBackdropAndSidedrawer} />
-  ) : null;
-
   let backdrop = sideDrawerState.showSideDrawer ? (
     <Backdrop setBackdropState={closeBackdropAndSidedrawer} />
   ) : null;
@@ -35,14 +31,17 @@ const App = () => {
   return (
     <Aux>
       <Toolbar showSideDrawerHandler={showSideDrawerHandler} />
-      {sidedrawer}
+      <Sidedrawer
+        close={closeBackdropAndSidedrawer}
+        sideShowState={sideDrawerState}
+      />
       {backdrop}
       <main>
         <Route path="/exapmles" component={ExamplesPage} />
         <Route path="/order_page" component={OrderPage} />
         <Route path="/" exact component={MainPage} />
       </main>
-      <Footer/>
+      <Footer />
     </Aux>
   );
 };

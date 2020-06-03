@@ -4,8 +4,12 @@ import { Link } from 'react-router-dom';
 import './sidedrawer.css';
 
 const Sidedrawer = (props) => {
+  let sideDrawerClassName = props.sideShowState.showSideDrawer
+    ? 'mobile-nav open'
+    : 'mobile-nav';
+
   return (
-    <nav className="mobile-nav">
+    <nav className={sideDrawerClassName}>
       <ul className="mobile-nav__items">
         <li className="mobile-nav__item">
           <Link to="/" onClick={props.close}>

@@ -6,6 +6,8 @@
   height: 100%;
   z-index: 200;
   background-color: #f7cce0;
+  transform: translateX(-100%);
+  transition: transform 200ms ease-out;
 }
 
 .mobile-nav__items {
@@ -28,4 +30,9 @@
 .mobile-nav__item > a:hover,
 .mobile-nav__item > a:active {
   text-decoration: underline #ff07ff;
+}
+
+.open {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
 }
