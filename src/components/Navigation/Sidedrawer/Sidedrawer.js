@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './sidedrawer.css';
 
 const Sidedrawer = (props) => {
-  let sideDrawerClassName = props.sideShowState.showSideDrawer
+  let sideDrawerClassName = props.sideShowState
     ? 'mobile-nav open'
     : 'mobile-nav';
 

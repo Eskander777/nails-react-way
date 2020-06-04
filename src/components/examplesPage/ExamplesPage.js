@@ -41,13 +41,13 @@ const Examples = () => {
   });
 
   let imageForModule = pickedImage ? pickedImage : null;
-  let backdrop = pickedImage ? (
-    <Backdrop setBackdropState={backdropStateHandler} />
-  ) : null;
 
   return (
     <Aux>
-      {backdrop}
+      <Backdrop
+        setBackdropState={backdropStateHandler}
+        backdropState={pickedImage}
+      />
       <ImageModal imgSrc={imageForModule} />
       <main>
         <div className="examples">{examples}</div>

@@ -12,30 +12,27 @@ import Sidedrawer from './components/Navigation/Sidedrawer/Sidedrawer';
 import Backdrop from './components/UI/Backdrop/Backdrop';
 
 const App = () => {
-  const [sideDrawerState, setSideDrawerState] = React.useState({
-    showSideDrawer: false,
-  });
+  const [sideDrawerState, setSideDrawerState] = React.useState(false);
 
   const showSideDrawerHandler = () => {
-    setSideDrawerState({ showSideDrawer: true });
+    setSideDrawerState(true);
   };
 
   const closeBackdropAndSidedrawer = () => {
-    setSideDrawerState({ showSideDrawer: false });
+    setSideDrawerState(false);
   };
-
-  let backdrop = sideDrawerState.showSideDrawer ? (
-    <Backdrop setBackdropState={closeBackdropAndSidedrawer} />
-  ) : null;
 
   return (
     <Aux>
       <Toolbar showSideDrawerHandler={showSideDrawerHandler} />
+      <Backdrop
+        setBackdropState={closeBackdropAndSidedrawer}
+        backdropState={sideDrawerState}
+      />
       <Sidedrawer
         close={closeBackdropAndSidedrawer}
         sideShowState={sideDrawerState}
       />
-      {backdrop}
       <main>
         <Route path="/exapmles" component={ExamplesPage} />
         <Route path="/order_page" component={OrderPage} />
