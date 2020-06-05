@@ -27,7 +27,21 @@ const Examples = () => {
   };
 
   const backdropStateHandler = () => {
-    setPickedImage(false);
+    setPickedImage(null);
+  };
+
+  const imageClickHandler = () => {
+    if (pickedImage) {
+      let image = pickedImage.replace('http://localhost:3000/assets/', '');
+      let imgIndex = images.indexOf(image);
+      let nextImgIndex = imgIndex + 1;
+      let nextImage = 'http://localhost:3000/assets/' + images[nextImgIndex];
+      if (nextImgIndex >= images.length) {
+        setPickedImage(null);
+      } else {
+        setPickedImage(nextImage);
+      }
+    }
   };
 
   let examples = images.map((image, index) => {
@@ -40,7 +54,7 @@ const Examples = () => {
     );
   });
 
-  let imageForModule = pickedImage ? pickedImage : null;
+  let imgShowState = pickedImage ? true : false;
 
   return (
     <Aux>
@@ -48,10 +62,12 @@ const Examples = () => {
         setBackdropState={backdropStateHandler}
         backdropState={pickedImage}
       />
-      <ImageModal imgSrc={imageForModule} />
-      <main>
-        <div className="examples">{examples}</div>
-      </main>
+      <ImageModal
+        imgSrc={pickedImage}
+        imgShowState={imgShowState}
+        imageClicked={imageClickHandler}
+      />
+      <div className="examples">{examples}</div>
     </Aux>
   );
 };

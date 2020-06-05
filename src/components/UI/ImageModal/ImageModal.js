@@ -1,22 +1,36 @@
 import React from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import './imageModal.css';
 
-const ImageModal = (props) => {
-  let pickedImage;
-  let classImageModal;
+const ImageModal = ({ imgSrc, imageClicked, imgShowState }) => {
+  const [imageToShow, setImageToShow] = React.useState();
 
-  switch (props.imgSrc) {
-    case null:
-      classImageModal = 'image-modal';
-      pickedImage = null;
-      break;
-    default:
-      pickedImage = <img src={props.imgSrc} alt="" />;
-      classImageModal = 'image-modal open';
+  if (imgShowState && (!imageToShow || imageToShow !== imgSrc)) {
+    setImageToShow(imgSrc);
+  } else if (!imgShowState && imageToShow) {
+    setTimeout(() => {
+      setImageToShow(imgSrc);
+    }, 350);
   }
 
-  return <div className={classImageModal}>{pickedImage}</div>;
+  const imgShowModule = (
+    <div className="image-modal">
+      <img src={imageToShow} alt="" onClick={imageClicked} />
+    </div>
+  );
+
+  return (
+    <CSSTransition
+      mountOnEnter
+      unmountOnExit
+      in={imgShowState}
+      timeout={300}
+      classNames="open-img-modal"
+    >
+      {imgShowModule}
+    </CSSTransition>
+  );
 };
 
 export default ImageModal;
