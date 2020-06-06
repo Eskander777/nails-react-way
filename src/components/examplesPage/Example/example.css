@@ -4,13 +4,14 @@
   max-width: 25rem;
   margin: auto;
   padding: 1rem;
-  display: inline-block;
 }
 
 .example-image {
   border-radius: 50%;
   width: 100%;
   border: 3px solid #ab4cb8;
+  opacity: 1;
+  transition: opacity 150ms linear;
 }
 
 .example-image:hover,

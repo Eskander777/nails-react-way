@@ -13,3 +13,15 @@ div#root {
   grid-template-rows: 3.45rem minmax(86.2vh, auto) fit-content(4rem);
   grid-template-areas: "header" "main" "footer";
 }
+
+@media(min-height: 64rem) {
+  div#root{
+    grid-template-rows: 3.45rem minmax(87.4vh, auto) fit-content(4rem);
+  }
+}
+
+@media(min-height: 85rem) {
+  div#root{
+    grid-template-rows: 3.45rem minmax(90.5vh, auto) fit-content(4rem);
+  }
+}

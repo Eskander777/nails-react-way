@@ -1,5 +1,6 @@
 .order-page__background {
   height: 86.2vh;
+  min-height: 25rem;
   background: url(../../assets/French-Manicure.jpg) top / cover no-repeat;
 }
 
@@ -15,10 +16,12 @@
   box-shadow: 2px 2px 2px 2px rgba(1, 1, 1, 0.5);
   display: grid;
   gap: 0.5rem;
-  grid-template-columns: [input-f-title-start] 7rem [input-f-title-end input-f-start] minmax(
+  grid-template-columns:
+    [input-f-title-start] 7rem [input-f-title-end input-f-start] minmax(
       7rem,
       auto
-    ) [input-f-end];
+    )
+    [input-f-end];
 }
 
 .order-form input:invalid {
@@ -73,8 +76,27 @@
   cursor: not-allowed;
 }
 
+@media (min-width: 48rem) and (max-width: 86rem) {
+  .order-form {
+    width: 50%;
+    top: 20%;
+  }
+}
+
 @media (max-width: 40rem) {
   .order-form input {
     grid-column: input-f-title-start / span 2;
+  }
+}
+
+@media (min-height: 64rem) {
+  .order-page__background {
+    height: 87.4vh;
+  }
+}
+
+@media (min-height: 85rem) {
+  .order-page__background {
+    height: 90.5vh;
   }
 }

@@ -55,3 +55,14 @@
     min-width: 98vw;
   }
 }
+
+@media (min-width: 29.9rem) and (orientation: landscape) and (max-width: 50rem) {
+  .image-modal {
+    top: 1vh;
+    left: 23%;
+  }
+
+  .image-modal > img {
+    min-width: 56vw;
+  }
+}
