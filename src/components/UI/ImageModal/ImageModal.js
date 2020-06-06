@@ -11,7 +11,7 @@ const ImageModal = ({ imgSrc, imageClicked, imgShowState }) => {
   } else if (!imgShowState && imageToShow) {
     setTimeout(() => {
       setImageToShow(imgSrc);
-    }, 350);
+    }, 300);
   }
 
   const imgShowModule = (

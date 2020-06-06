@@ -10,7 +10,7 @@
 }
 
 .main-header__brand {
-  margin-left: 3%;
+  margin-left: 3vw;
 }
 
 .toggle-button {
@@ -42,7 +42,7 @@
 }
 
 .main-nav {
-  margin-right: 4rem;
+  margin-right: 3vw;
 }
 
 .main-nav__items {
