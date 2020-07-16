@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import './imageModal.css';
 
 const ImageModal = ({ imgSrc, imageClicked, imgShowState }) => {
-  const [imageToShow, setImageToShow] = React.useState();
+  const [imageToShow, setImageToShow] = useState();
 
   if (imgShowState && (!imageToShow || imageToShow !== imgSrc)) {
     setImageToShow(imgSrc);

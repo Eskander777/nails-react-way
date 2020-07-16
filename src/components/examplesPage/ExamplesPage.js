@@ -7,6 +7,8 @@ import Backdrop from '../UI/Backdrop/Backdrop';
 import Example from './Example/Example';
 
 const Examples = () => {
+  const localStore = 'http://localhost:3000/assets/';
+
   const images = [
     '87R0QnsacZE.jpg',
     'Ai8pLNvzMLU.jpg',
@@ -32,10 +34,9 @@ const Examples = () => {
 
   const imageClickHandler = () => {
     if (pickedImage) {
-      let image = pickedImage.replace('http://localhost:3000/assets/', '');
-      let imgIndex = images.indexOf(image);
-      let nextImgIndex = imgIndex + 1;
-      let nextImage = 'http://localhost:3000/assets/' + images[nextImgIndex];
+      const image = pickedImage.replace(localStore, '');
+      const nextImgIndex = images.indexOf(image) + 1;
+      const nextImage = `${localStore}${images[nextImgIndex]}`;
       if (nextImgIndex >= images.length) {
         setPickedImage(null);
       } else {
@@ -44,23 +45,23 @@ const Examples = () => {
     }
   };
 
-  let examples = images.map((image, index) => {
+  const examples = images.map((image, index) => {
     return (
       <Example
-        path={'assets/' + image}
+        path={image}
         key={index}
         clicked={(event) => pickImgHandler(event)}
       />
     );
   });
 
-  let imgShowState = pickedImage ? true : false;
+  const imgShowState = pickedImage ? true : false;
 
   return (
     <Aux>
       <Backdrop
         setBackdropState={backdropStateHandler}
-        backdropState={pickedImage}
+        backdropState={imgShowState}
       />
       <ImageModal
         imgSrc={pickedImage}

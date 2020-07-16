@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 import './toolbar.css';
 
-const Toolbar = (props) => {
+const Toolbar = ({showSideDrawerHandler}) => {
   return (
     <header className="main-header">
       <div className="main-header__brand">
-        <button className="toggle-button" onClick={props.showSideDrawerHandler}>
+        <button className="toggle-button" onClick={showSideDrawerHandler}>
           <span className="toggle-button__bar"></span>
           <span className="toggle-button__bar"></span>
           <span className="toggle-button__bar"></span>
@@ -19,7 +19,6 @@ const Toolbar = (props) => {
           <li className="main-nav__item">
             <NavLink
               to="../exapmles"
-              activeStyle={{ color: 'white', backgroundColor: '#f7338ecc' }}
             >
               Примеры работ
             </NavLink>
@@ -27,7 +26,6 @@ const Toolbar = (props) => {
           <li className="main-nav__item">
             <NavLink
               to="../order_page"
-              activeStyle={{ color: 'white', backgroundColor: '#f7338ecc' }}
             >
               Записаться сейчас
             </NavLink>

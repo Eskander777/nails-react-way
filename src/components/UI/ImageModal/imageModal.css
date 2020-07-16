@@ -6,6 +6,10 @@
   left: 28%;
 }
 
+.image-modal:hover {
+  cursor: pointer;
+}
+
 .open-img-modal-enter {
   opacity: 0;
   transform: translateY(-5rem);

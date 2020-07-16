@@ -4,13 +4,11 @@ import { CSSTransition } from 'react-transition-group';
 import './backdrop.css';
 
 const Backdrop = ({ setBackdropState, backdropState }) => {
-  let stateForTransition = backdropState ? true : false;
-
   return (
     <CSSTransition
       mountOnEnter
       unmountOnExit
-      in={stateForTransition}
+      in={backdropState}
       timeout={300}
       classNames="open"
     >
